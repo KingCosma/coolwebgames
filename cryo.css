@@ -11,3 +11,4 @@
 .white {color: white;}
 .point {cursor: pointer;}
 .in {background-color: #12202f; border: 2px solid #41c3fe; color: #41c3fe;}
+.in:focus {background-color: #12202f; border: 2px solid #41c3fe; color: #41c3fe; box-shadow: none;}
