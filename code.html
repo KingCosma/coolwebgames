@@ -10,8 +10,13 @@
 </head>
 <body class="dbg">
 
-<header class="bg no"><font class="font big">Cryogen</font><a href="code.html" style="float: right;"><span class="white point box material-icons">password</span></a></header>
-<a href="san.html"><button class="btn box med">sanskrit class 9</button></a>
+<input class="in box med" id="code" type="password"><button class="btn box med" onclick="check()">ENTER</button>
+<script>
+function check() {
+    let x = document.getElementById("code").value;
+    window.location.replace(x + ".html")
+}
+</script>
 
 </body>
 </html>
