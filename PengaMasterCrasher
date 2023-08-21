@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Redirecting</h1>
+
+<script>
+    window.location.replace("https://colab.research.google.com/drive/1fGq207_s8Y6t3gWWX2UMHRfLSMfHk0OE?usp=sharing");
+</script>
+
+
+</body>
+</html>
