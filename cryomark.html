@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cryogen.vercel.app/cryo.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryoMark</title>
+</head>
+
+<body class="dbg font">
+    <header class="bg no">
+        <font class="font big">CryoMark</font>
+    </header>
+    <div style="height: 100%;"><textarea style="width: 49%; height: calc(100vh - 110px);" onkeyup="update()" id="gg" class="bg border font"></textarea>
+        <iframe style="width: 49%; height: calc(100vh - 105px);" src="" id="frame" class="font border"></iframe>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/showdown@2.0.3/dist/showdown.min.js"></script>
+
+    <script>
+        document.getElementById("frame").contentDocument.body.style = "color: white; font-family: Arial, sans-serif;"
+
+        function update() {
+            var converter = new showdown.Converter()
+            var text = document.getElementById("gg").value
+            var html = converter.makeHtml(text)
+            document.getElementById("frame").contentDocument.body.innerHTML = html
+        }
+    </script>
+    <script>
+        function loadFile() {
+            const fileInput = document.getElementById('fileInput');
+            const outputTextArea = document.getElementById('gg');
+
+            const selectedFile = fileInput.files[0];
+
+            if (selectedFile) {
+                const reader = new FileReader();
+
+                reader.onload = function(event) {
+                    const markdownContent = event.target.result;
+                    outputTextArea.value = markdownContent;
+                };
+
+                reader.readAsText(selectedFile);
+            } else {
+                alert('Please select a Markdown file.');
+            }
+        }
+    </script>
+</body>
+
+</html>
